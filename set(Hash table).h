@@ -30,10 +30,6 @@ class set
       // Returns true if the insertion took place.
 
 public:
-   // Number of buckets cannot be zero.
-   // Different from earlier interpretations, we use
-   // powers of three. Best would be prime numbers close
-   // to powers of two.
 
    set( double max_load_factor = 3.0 )
       : set_size(0),
@@ -44,8 +40,6 @@ public:
          throw std::runtime_error( "max load factor must be > 0" );
    }
 
-   // We define the copy constructor, assignment operator, and destructor
-   // as defaults, which means that they are just applied on the fields.
 
    set( const set& s ) = default;
    set& operator = ( const set& s ) = default;
@@ -73,8 +67,6 @@ public:
    void print( std::ostream& out ) const;
 
 
-   // The functions below are not part of
-   // the set interface, they are specific for hashing:
 
    double loadfactor() const
    {
